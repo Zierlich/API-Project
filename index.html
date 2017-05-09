@@ -1,3 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css">
+  <link rel="stylesheet" href="https://material.angularjs.org/1.1.4/docs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
+
+</head>
+<body>
+
 <html>
   <head>
     <title>API</title>
@@ -17,6 +31,7 @@
 
   </head>
   <body>
+
 <div ng-controller="BookCtrl" ng-cloak=""  ng-app="MyApp">
   <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
     <div flex-xs="" flex-gt-xs="95" layout="column">
@@ -43,7 +58,7 @@
                 <!--Tab 1-->
                 <md-tab label="books">
                   <md-content class="md-padding">
-                      <md-subheader class="md-no-sticky" ng-show="search == false">{{results}}</md-subheader>
+                      <md-subheader class="md-no-sticky" ng-show="search == false">Nothing to search ...</md-subheader>
                       <md-subheader class="md-no-sticky" ng-if="!bookInfo" ng-hide="search == false">Loading results for "{{search}}" ...</md-subheader>
                       <div id="main-info" class="col-md-8">
                        <div class="animated zoomInRight" id="mainInfo" ng-show="!bookInfo == false">
@@ -168,5 +183,22 @@
     </div>
   </md-content>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+<script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src=""></script> -->
+
+
+<script src="js/app.js"></script>
 </body>
 </html>
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+-->
