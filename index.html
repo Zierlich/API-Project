@@ -1,0 +1,156 @@
+
+<div ng-controller="BookCtrl" ng-cloak=""  ng-app="MyApp">
+  <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+    <div flex-xs="" flex-gt-xs="95" layout="column">
+      <md-card class="cardBody">
+        <!--Header Image -->
+        <img ng-src="{{imagePath}}" class="md-card-image">
+        <!-- Card Header-->
+        <md-card-title class="cardHeader">
+          <md-card-title-text>
+            <center>
+              <md-input-container>
+                <!-- Input Search -->
+                <label>Search (Book Title/ Author)</label>
+                <input ng-model="search" type="text" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control">
+              </md-input-container>
+            </center>
+          </md-card-title-text>
+        </md-card-title>
+        <!--Card Content-->
+        <md-card-content>
+          <div ng-cloak="" class="tabsdemoDynamicHeight" ng-app="MyApp">
+            <md-content>
+              <md-tabs md-dynamic-height="" md-border-bottom="">
+                <!--Tab 1-->
+                <md-tab label="books">
+                  <md-content class="md-padding">
+                      <md-subheader class="md-no-sticky" ng-show="search == false">{{results}}</md-subheader>
+                      <md-subheader class="md-no-sticky" ng-if="!bookInfo" ng-hide="search == false">Loading results for "{{search}}" ...</md-subheader>
+                      <div id="main-info" class="col-md-8">
+                       <div class="animated zoomInRight" id="mainInfo" ng-show="!bookInfo == false">
+                        <img ng-src="{{bookInfo.imageLinks.smallThumbnail}}" class="thumbnail animated flip movie-poster">
+                          <span class="span-outer">
+                            <a href="{{ bookInfo.previewLink }}" target="_blank">
+                              <h3>{{bookInfo.title}}</h3>
+                            </a>
+                          </span>
+
+                          <p>
+                          <button class="infoLabel"><strong>Publisher:</strong></button> {{bookInfo.publisher}} ({{bookInfo.publishedDate}})
+                        <br>
+                          <button class="infoLabel"><strong><span class="label label-primary" >Authors :</span></strong></button>
+                              <span ng-repeat="author in bookInfo.authors">{{author}}, </span>
+                        <br>
+                          <button class="infoLabel"><strong><span class="label label-primary" >Categories :</span></strong></button>
+                              <span ng-repeat="categories in bookInfo.categories">{{categories}}</span>
+                        </p>
+
+                          <p>{{bookInfo.description}}</p>
+
+
+
+                    <div class="rating">
+                            <br>
+                            <strong>Average Rating:</strong><button class="rate"><span class="label label-success">{{bookInfo.averageRating}}</span></button>
+                            <br>
+                            <strong>Ratings Count:</strong><button class="rate"><span class="label label-success">{{bookInfo.ratingsCount}}</span></button>
+                            <br>
+                            <strong>Maturity Rating:</strong><button class="rate"><span class="label label-success">{{bookInfo.maturityRating.split('_').join(' ')}}</span></button>
+                          </p>
+
+                      </div>
+                    <div class="sell">
+                            <br>
+                            <strong>Country:</strong><button class="sale"><span class="label label-success">{{saleInfo.country}}</span></button>
+                            <br>
+                            <strong>Sale Ability:</strong><button class="sale"><span class="label label-success">{{ saleInfo.saleability.split('_').join(' ')}}</span></button>
+                            <br>
+                            <strong>List Price:</strong><button class="sale"><span class="label label-success">{{ saleInfo.listPrice.amount}} {{saleInfo.listPrice.currencyCode | lowercase}}</span></button>
+                            <br>
+                            <strong>Retail Price:</strong><button class="sale"><span class="label label-success">{{ saleInfo.listPrice.amount}} {{saleInfo.retailPrice.currencyCode | lowercase}}</span></button>
+                            <br>
+                          </p>
+                        </div>
+                      <div class="buy">
+                             <md-button class="md-raised md-primary" href="{{ bookInfo.previewLink }}" target="_blank"><strong>Buy this book!</strong></button>
+                     </div>
+                  </div>
+                </div>
+<!-- End of Main Info -->
+                  <div id="related-results" class="col-md-4 animated bounce related-results" ng-show="!bookInfo == false">
+                    <div>
+                      <h4><strong>Related Results:</strong></h4>
+
+                      <md-list flex="" class="rel-results">
+                        <md-list-item ng-repeat="book in relatedBooks">
+                          <div class="md-list-item-text" layout="column">
+                          <a href="#" id="{{ $index + 1 }}" ng-click="update(book)">{{book.volumeInfo.title}}</a>
+                          </div>
+                        </md-list-item>
+                      </md-list>
+                    </div>
+                  </div>
+
+                  </md-content>
+                </md-tab>
+                <!--Tab 2-->
+                <md-tab label="the developers">
+                  <md-content class="md-padding">
+                    <br><h1 class="hello">Hello!</h1>
+                    <h3 style="font-size:20px; text-align:center; font-family: 'Montserrat', sans-serif;">We are students taking up Bachelor of Science in Information Technology at Dalubhasaan ng Lunsod ng San Pablo. Enjoy!</h3><br><br>
+                     <div class="container">
+                      <!--Deve1-->
+                       <a href="http://codepen.io/agutierrez18/full/rmGyLd/" target="_blank">
+                        <div class="user1">
+                          <div class="userCard1" onmouseover="ff1('userCard1')" onmouseleave="ff2('userCard1')">
+                              <img src="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-512.png" class="userLogo" id='pic'/>
+                            <div class="name">DAINTY JEN A. MATUNDAN<br><font style="font-size: 15px">@dainty</font></div>
+                          </div>
+                         </div>
+                       </a>
+                     <!--Deve2-->
+                       <a href="http://codepen.io/agutierrez18/full/oWGBRQ/" target="_blank">
+                        <div class="user2">
+                          <div class="userCard2" onmouseover="ff1('userCard2')" onmouseleave="ff2('userCard2')">
+                            <img src="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-512.png" class="userLogo"/>
+                            <div class="name">DARWIN D. ROSALES<br><font style="font-size: 15px">@dawen</font></div>
+                          </div>
+                         </div><br><br><br><br><br><br><br>
+                       </a>
+
+                     <!--Deve3-->
+                    <a href="http://codepen.io/agutierrez18/full/jmBWjE/" target="_blank">
+                     <div class="user3">
+                        <div class="userCard3" onmouseover="ff1('userCard3')" onmouseleave="ff2('userCard3')">
+                          <img src="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-512.png" class="userLogo"/>
+                        <div class="name">ARNOLD C.GUTIERREZ<br><font style="font-size: 15px">@arnold</font></div>
+                       </div>
+                     </div>
+                    </a>
+
+                    <!--Deve4-->
+                        <a href="http://codepen.io/agutierrez18/full/eWGvNy/" target="_blank">
+                         <div class="user4">
+                          <div class="userCard4" onmouseover="ff1('userCard4')" onmouseleave="ff2('userCard4')">
+                            <img src="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-512.png" class="userLogo"/>
+                            <div class="name">CATHLYN JOY M. DIOMAMPO<br><font style="font-size: 15px">@cath</font></div>
+                          </div>
+                         </div>
+                         </a>
+                     </div>
+                  </md-content>
+                </md-tab>
+              </md-tabs>
+            </md-content>
+          </div>
+        </md-card-content>
+      </md-card>
+
+    </div>
+  </md-content>
+</div>
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+-->
