@@ -9,20 +9,25 @@
     <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css">
     <link rel="stylesheet" href="https://material.angularjs.org/1.1.4/docs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css">
+  <link rel="stylesheet" href="https://material.angularjs.org/1.1.4/docs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
+
+</head>
+<body>
+
+<html>
+  <head>
+    <title>API</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" >
     <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css">
     <link rel="stylesheet" href="https://material.angularjs.org/1.1.4/docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
-    <script url="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-    <script url="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script url="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
-    <script url="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script url="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-    <script url="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
-    <script url="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.js"></script>
-    <script url="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
   </head>
   <body>
 
@@ -55,7 +60,7 @@
                       <md-subheader class="md-no-sticky" ng-show="search == false">Nothing to search ...</md-subheader>
                       <md-subheader class="md-no-sticky" ng-if="!bookInfo" ng-hide="search == false">Loading results for "{{search}}" ...</md-subheader>
                       <div id="main-info" class="col-md-8">
-                       <div class="animated zoomInRight" id="mainInfo" ng-show="!bookInfo == false">
+                       <div class="animated zoomInRight" id="mainInfo" ng-if="bookInfo" ng-hide="search == false">
                         <img ng-src="{{bookInfo.imageLinks.smallThumbnail}}" class="thumbnail animated flip movie-poster">
                           <span class="span-outer">
                             <a href="{{ bookInfo.previewLink }}" target="_blank">
@@ -105,7 +110,7 @@
                   </div>
                 </div>
 <!-- End of Main Info -->
-                  <div id="related-results" class="col-md-4 animated bounce related-results" ng-show="!bookInfo == false">
+                  <div id="related-results" class="col-md-4 animated bounce related-results" ng-if="bookInfo" ng-hide="search == false">
                     <div>
                       <h4><strong>Related Results:</strong></h4>
 
