@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>API</title>
+  <title>TRY</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="css/style.css">
@@ -16,19 +16,17 @@
     <div flex-xs="" flex-gt-xs="95" layout="column">
       <md-card class="cardBody">
         <!--Header Image -->
-        <img ng-src="{{imagePath}}" class="md-card-image">
-        <!-- Card Header-->
-        <md-card-title class="cardHeader">
-          <md-card-title-text>
-            <center>
+        <header md-page-header>
+        <div md-header-picture style="background-image:url({{imagePath}})">
+          <center>
               <md-input-container>
                 <!-- Input Search -->
                 <label>Search (Book Title/ Author)</label>
                 <input ng-model="search" type="text" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control">
               </md-input-container>
-            </center>
-          </md-card-title-text>
-        </md-card-title>
+          </center>
+         </div>
+       </header>
         <!--Card Content-->
         <md-card-content>
           <div ng-cloak="" class="tabsdemoDynamicHeight" ng-app="MyApp">
