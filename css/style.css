@@ -33,7 +33,11 @@ md-card{
 }
 
 .input{
+<<<<<<< HEAD
   margin-top: 320px;
+=======
+  margin-top: 330px;
+>>>>>>> a4f82e094b3f557ade9a1e2dbfb6935a5013b797
 }
 
 md-input-container{
