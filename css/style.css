@@ -32,9 +32,12 @@ md-card{
   background-color: #F3F2ED;
 }
 
+.input{
+  margin-top: 330px;
+}
+
 md-input-container{
   width: 50%;
-  margin-top: 320px;
 }
 
 md-input-container label {
