@@ -24,7 +24,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
 
 
  //Header Image
-  $scope.imagePath = 'http://res.cloudinary.com/dvirpbo6t/image/upload/v1493261790/Untitled_au0soa.png';
+  $scope.imagePath = 'http://res.cloudinary.com/dvirpbo6t/image/upload/v1494467379/33_j7mwkp.png';
 });
 
 $('#pic').hover(function() {
